@@ -7,6 +7,11 @@
             <title>Halaman <?= $data['judul']; ?></title>
             <link rel="stylesheet" href="<?= BASEURL; ?>/css/bootstrap.css">
     </head>
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
     <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
