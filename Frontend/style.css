@@ -1,0 +1,124 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Caldea', serif;
+}
+.banner{
+    width: 100%;
+    height: 100%;
+    background-image: ;
+    background-size: cover;
+    position: relative;
+}
+.nav{
+    width: 1100px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+}
+.nav .logo{
+    font-size: 30px;
+    font-weight: 600;
+    color: black;
+    letter-spacing: 1.5px;
+}
+.nav .menu {
+    width: 45%;
+}
+.nav .menu ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav .menu ul li {
+    list-style: none;
+}
+.nav .menu ul li a{
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: black;
+    text-decoration: none;
+}
+.nav .menu .active{
+    color: red;
+}
+.banner-clp-path{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 0, 25% 0, 50% 100%, 0 100%);
+    background-color: red;
+    z-index: 2;
+    background-image: ;
+    background-size: cover;
+}
+.banner-text{
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 52%;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: black;
+    padding-top: 200px;
+    padding-left: 20px;
+}
+.banner-text button{
+
+    width: 170px;
+    height: 40px;
+    background-color: red;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 10px;
+    border: none;
+}
+.SP{
+    padding-top: 500px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+.features-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.feature-box {
+    flex: 1 0 20%; /* Menyesuaikan ukuran box sesuai layar */
+    padding: 5px;
+}
+
