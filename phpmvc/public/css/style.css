@@ -1,0 +1,130 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: 'Calibri', sans-serif;
+}
+.banner{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: relative;
+}
+.nav{
+    width: 1100px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+}
+.nav .logo{
+    font-size: 30px;
+    font-weight: 600;
+    color: black;
+    letter-spacing: 1.5px;
+}
+.nav .menu {
+    width: 45%;
+}
+.nav .menu ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav .menu ul li {
+    list-style: none;
+}
+.nav .menu ul li a{
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: black;
+    text-decoration: none;
+}
+.nav .menu .active{
+    color: red;
+}
+
+
+.SP {
+    padding-top: 500px;
+    background-image: url(../img/badminton.jpg);
+    background-size: cover;
+}
+
+.banner-text{
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 52%;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: black;
+    padding-top: 200px;
+    padding-left: 20px;
+}
+.banner-text button{
+
+    width: 170px;
+    height: 40px;
+    background-color: red;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 10px;
+    border: none;
+}
+.SP{
+    padding-top: 500px;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Specific styles for each table */
+#schedule-table {
+    margin-bottom: 20px; /* Add spacing at the bottom of the schedule table */
+}
+
+#members-table {
+    margin-top: 20px; /* Add spacing at the top of the members table */
+    margin-bottom: 50px; /* Add spacing at the bottom of the members table */
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}

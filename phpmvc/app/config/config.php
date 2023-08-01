@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 define('BASEURL', 'http://localhost/phpmvc/public');
 
 // DB

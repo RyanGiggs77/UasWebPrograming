@@ -3,9 +3,11 @@ class App {
     protected $controller = 'Home';
     protected $method = 'index';
     protected $params = [];
+    protected $currentPage;
     
     public function __construct() {
         $url = $this->parse_URL();
+
         // Controller
         if (isset($url[0])) {
             if (file_exists('../app/controllers/' . $url[0] . '.php')) {
@@ -32,6 +34,13 @@ class App {
         
         // Call a callback with array of params
         call_user_func_array([$this->controller, $this->method], $this->params);
+
+        $this->currentPage = $_SERVER['REQUEST_URI'];
+    }
+
+    public function getCurrentPage()
+    {
+        return $this->currentPage;
     }
 
     public function parse_url()

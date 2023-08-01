@@ -8,11 +8,15 @@ class Flasher {
             'tipe' => $tipe,
         ];
     }
-    
+
     public static function flash() {
         if (isset($_SESSION['flash'])) {
-            echo '<div class="alert alert-' . $_SESSION['flash']['tipe'] . ' alert-dismissible fade show" role="alert">
-                    Data Pertandingan <strong>' . $_SESSION['flash']['pesan'] . '</strong> ' . $_SESSION['flash']['aksi'] . '
+            $tipe = $_SESSION['flash']['tipe'];
+            $pesan = $_SESSION['flash']['pesan'];
+            $aksi = $_SESSION['flash']['aksi'];
+
+            echo '<div class="alert alert-' . $tipe . ' alert-dismissible fade show" role="alert">
+                    Data Pertandingan <strong>' . $pesan . '</strong> ' . $aksi . '
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                   </div>';
             unset($_SESSION['flash']);
