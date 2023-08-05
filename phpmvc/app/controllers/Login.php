@@ -4,6 +4,7 @@ class Login extends Controller {
 
     public function index()
     {
+        $data['css'] = 'styleLogin.css';
         $data['judul'] = 'Login';
         $this->view('login/index');
 
@@ -35,16 +36,17 @@ class Login extends Controller {
                     session_start();
                     $_SESSION['user_id'] = $user['id'];
                     $_SESSION['username'] = $user['username'];
+                    $_SESSION['password'] = $user['password'];
                     $_SESSION['role'] = 'user';
                     header('Location: ' . BASEURL . '/home');
                     return;
                 } else {
-                    Flasher::setFlash('Password salah', 'ditambahkan', 'danger');
+                    Flasher::setFlash('Password', 'salah', 'danger');
                     header('Location: ' . BASEURL . '/login');
                     exit;
                 }
             } else {
-                Flasher::setFlash('Username tidak ditemukan', 'ditambahkan', 'danger');
+                Flasher::setFlash('Username', 'tidak ditemukan', 'danger');
                 header('Location: ' . BASEURL . '/login');
                 exit;   
             }
@@ -56,6 +58,19 @@ class Login extends Controller {
         session_start();
         session_unset();
         session_destroy();
-        header('Location: ' . BASEURL . '/login');
+        header('Location: ' . BASEURL . '/home');
+    }
+
+    public function tambah()
+    {
+        if ($this->model('User_model')->tambahDataUser($_POST) > 0) {
+            Flasher::setFlash('Data user berhasil', 'ditambahkan', 'success');
+            header('Location: ' . BASEURL . '/login');
+            exit;
+        } else {
+            Flasher::setFlash('Data user gagal', 'ditambahkan', 'danger');
+            header('Location: ' . BASEURL . '/formulir');
+            exit;
+        }
     }
 }

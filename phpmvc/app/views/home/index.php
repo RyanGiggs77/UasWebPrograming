@@ -1,12 +1,10 @@
-
-    <!--LANDING-->
 <div class="banner">
     <div class="banner-clip-path">
     </div>
     
     <div class="banner-text">
-        <h1>Badminton Indonesia</h1>
-        <button>comming match</button>
+        <h1>Badminton Club</h1>
+        <a href="<?= BASEURL; ?>/formulir"><button>Join Now</button></a>
     </div>
 </div>
     
@@ -15,8 +13,7 @@
    
 </div>
 
-<hr>
-<div class="container">
+<div class="container mt-4">
     <div class="row">
         <div class="container">
             <h2 id="schedule">Jadwal Pertandingan</h2>
@@ -28,13 +25,13 @@
                     <th>Waktu</th>
                     <th>Tempat</th>
                 </tr>
-                <?php foreach ($data['jadwal'] as $jadwal) : ?>
+                <?php foreach ($data['pertandingan'] as $pertandingan) : ?>
                     <tr>
-                        <td><?= $jadwal['teamPertama']; ?></td>
-                        <td><?= $jadwal['teamKedua']; ?></td>
-                        <td><?= $jadwal['tanggal']; ?></td>
-                        <td><?= $jadwal['waktu']; ?></td>
-                        <td><?= $jadwal['tempat']; ?></td>
+                        <td><?= $pertandingan['teamPertama']; ?></td>
+                        <td><?= $pertandingan['teamKedua']; ?></td>
+                        <td><?= $pertandingan['tanggal']; ?></td>
+                        <td><?= $pertandingan['waktu']; ?></td>
+                        <td><?= $pertandingan['tempat']; ?></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
@@ -45,20 +42,20 @@
         
     <div class="row">
         <div class="container-fluid">
-            <h2 id="members">Informasi Pemain</h2>
+            <h2 id="members">Informasi Anggota</h2>
             <table id="members-table" class="table table-striped table-bordered">
                 <tr>
-                    <th>Rank</th>
                     <th>Nama</th>
-                    <th>Negara</th>
-                    <th>Poin</th>
+                    <th>Umur</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Kota</th>
                 </tr>
                 <?php foreach ($data['pemain'] as $pemain) : ?>
                     <tr>
-                        <td><?= $pemain['rank']; ?></td>
-                        <td><?= $pemain['nama']; ?></td>
-                        <td><?= $pemain['negara']; ?></td>
-                        <td><?= $pemain['poin']; ?></td>
+                        <td><?= $pemain['nama_lengkap']; ?></td>
+                        <td><?= $pemain['usia']; ?></td>
+                        <td><?= $pemain['jenis_kelamin']; ?></td>
+                        <td><?= $pemain['kota']; ?></td>
                     </tr>
                 <?php endforeach; ?>
             </table>

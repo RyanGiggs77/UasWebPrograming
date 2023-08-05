@@ -13,23 +13,21 @@
 </head>
 <body>
 	
-<div class="container mt-5" style="padding-top: 50px;" >
-    <div class="row">
-        <div class="col-6">
-            <?php Flasher::flash(); ?>
-        </div>
-    </div>
 
 <section class="ftco-section">
     <div class="container">
 		
         <div class="row justify-content-center">
             <div class="col-md-6 text-center mb-5">
-                <h2 class="heading-section">Login Badminton</h2>
+			<div class="container mt-5" style="padding-top: 50px;" >
+				<div class="row">
+					<div>
+						<?php Flasher::flash(); ?>
+					</div>
+				</div>
             </div>
         </div>
         <div class="row justify-content-center">
-			
             <div class="col-md-7 col-lg-5">
                 <div class="login-wrap p-4 p-md-5">
                     <div class="icon d-flex align-items-center justify-content-center">
@@ -37,39 +35,40 @@
                     </div>
                     <h3 class="text-center mb-4">Sign In</h3>
                     <form action="<?= BASEURL; ?>/login" method="post" class="login-form">
-                        <div class="form-group">
-                            <input type="text" name="username" class="form-control rounded-left" placeholder="Username" required>
-                        </div>
-                        <div class="form-group d-flex">
-                            <input type="password" name="password" class="form-control rounded-left" placeholder="Password" required>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="form-control btn btn-primary rounded submit px-3">Login</button>
-                        </div>
-                        <div class="form-group d-md-flex">
-                            <div class="w-50">
-                                <label class="checkbox-wrap checkbox-primary">
-                                    Remember Me
-                                    <input type="checkbox" checked>
-                                    <span class="checkmark"></span>
-                                </label>
+                        <?php
+                        if (!isset($_SESSION['username'])):
+                            ?>
+                            <div class="form-group">
+                                <input type="text" name="username" class="form-control rounded-left" placeholder="Username" required>
                             </div>
-                            <div class="w-50 text-md-right">
-                                <a href="#">Forgot Password</a>
+                            <div class="form-group d-flex">
+                                <input type="password" name="password" class="form-control rounded-left" placeholder="Password" required>
                             </div>
-                        </div>
-                    </form>
-                    <?php
-                    // Cek apakah pengguna sudah dalam sesi login atau belum
-                    if (isset($_SESSION['username'])):
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary rounded submit px-3">Login</button>
+                            </div>
+                            <div class="form-group d-md-flex">
+                                <div class="w-50">
+                                    <label class="checkbox-wrap checkbox-primary">
+                                        Remember Me
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="w-50 text-md-right">
+                                    <a href="<?= BASEURL ?>/formulir">Sign Up</a>
+                                </div>
+                            </div>
+                        <?php
+                        else:
+                            ?>
+                            <div class="form-group">
+                                <a href="<?= BASEURL; ?>/login/logout" class="form-control btn btn-danger rounded submit px-3">Logout</a>
+                            </div>
+                        <?php
+                        endif;
                         ?>
-                        <!-- Tampilkan tombol atau link logout jika pengguna sudah dalam sesi login -->
-                        <div class="form-group">
-                            <a href="<?= BASEURL; ?>/login/logout" class="form-control btn btn-danger rounded submit px-3">Logout</a>
-                        </div>
-                    <?php
-                    endif;
-                    ?>
+                    </form>
                 </div>
             </div>
         </div>

@@ -10,7 +10,6 @@ class Database {
     private $stmt;
 
     public function __construct() {
-        // data source name
         $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->name;
 
         $option = [
@@ -19,7 +18,6 @@ class Database {
         ];
 
         try {
-            // $this->dbh = new PDO($dsn, $this->user, $this->pass);
             $this->dbh = new PDO($dsn, $this->user, $this->pass, $option);
         } catch(PDOException $e) {
             die($e->getMessage());

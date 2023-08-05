@@ -14,6 +14,8 @@ class Keanggotaan extends Controller {
         $data['active4'] = 'active';
         $data['active5'] = '';
 
+        $data['css'] = 'styleInformasi.css';
+
         $this->view('templates/header', $data);
         $this->view('keanggotaan/index');
         $this->view('templates/footer');

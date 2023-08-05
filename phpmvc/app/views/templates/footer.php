@@ -1,6 +1,6 @@
-<footer class="bg-dark text-white py-3">
+<footer class="bg-dark text-white py-3 mt-1" >
     <div class="container-fluid text-center">
-        <p>&copy; 2024 Badminton Club</p>
+        <p>&copy; 2023 Badminton Club</p>
     </div>
 </footer>
 

@@ -16,7 +16,7 @@ class Flasher {
             $aksi = $_SESSION['flash']['aksi'];
 
             echo '<div class="alert alert-' . $tipe . ' alert-dismissible fade show" role="alert">
-                    Data Pertandingan <strong>' . $pesan . '</strong> ' . $aksi . '
+                    Data <strong>' . $pesan . '</strong> ' . $aksi . '
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                   </div>';
             unset($_SESSION['flash']);
